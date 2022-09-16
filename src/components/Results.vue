@@ -23,10 +23,16 @@ export default {
             this.rank = 'REALLY FAST!';
             this.color = 'white';
         } else if (this.displayScore < 400) {
-            this.rank = 'Fast Enough';
+            this.rank = 'Hmm... Fast Enough';
             this.color = 'green';
-        } else {
+        } else if (this.displayScore < 1000) {
             this.rank = 'Too Slow';
+            this.color = 'red';
+        } else if(this.displayScore < 3000) {
+            this.rank = 'Really??';
+            this.color = 'red';
+        } else {
+            this.rank = 'Meh...';
             this.color = 'red';
         }
     }
