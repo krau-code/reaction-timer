@@ -68,12 +68,20 @@ export default {
     letter-spacing: 1px;
     cursor: pointer;
     margin-top: 15px;
+    transition: 0.1s ease-in;
+  }
 
+  button:hover {
+    transform: scale(0.9);
   }
 
   button[disabled] {
     opacity: 0.2;
     cursor: not-allowed;
+  }
+
+  button[disabled]:hover {
+    transform: none;
   }
   
   .too-early {
