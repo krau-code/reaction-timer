@@ -14,6 +14,7 @@ Things that I added/changed:
 * Added a favicon
 
 Tutorial Series Link: <https://www.youtube.com/playlist?list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1>
+My Live Link: <https://krau-reaction-timer.netlify.app/>
 
 ## Project setup
 ```
