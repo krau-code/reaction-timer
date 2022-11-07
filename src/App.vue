@@ -1,22 +1,39 @@
 <template>
-  <h1>Reaction Timer</h1>
-  <p>Click the block as fast as possible when it appears.</p>
-  <button @click="start" :disabled="isPlaying">PLAY</button>
-  <Block v-if="isPlaying" :delay="delay" @end="endGame" @tooEarly="clickedEarly" />
-  <Results v-if="showResults" :displayScore="score"/>
-  <p v-if="showTooEarly" class="too-early">clicked too early, play again</p>
+  <div class="flex">
+    <Header />
+  
+    <section id="content">
+      <p>Click the block as fast as possible when it appears.</p>
+      <button @click="start" :disabled="isPlaying">PLAY</button>
+
+      <!-- Block -->
+      <Block v-if="isPlaying" :delay="delay" @end="endGame" @tooEarly="clickedEarly" />
+
+      <!-- Result -->
+      <Results v-if="showResults" :displayScore="score"/>
+
+      <!-- Too Early -->
+      <p v-if="showTooEarly" class="too-early">clicked too early, play again</p>
+    </section>
+
+    <Footer />
+  </div>
 </template>
 
 <script>
+import Header from './components/Header.vue';
 import Block from './components/Block.vue';
 import Results from './components/Results.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   title: 'Reaction Timer',
   components: {
+    Header,
     Block,
-    Results
+    Results,
+    Footer
   },
   data() {
     return {
@@ -48,9 +65,16 @@ export default {
 </script>
 
 <style>
-  #app {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #content {
     text-align: center;
-    margin-top: 40px;
+    padding: 3rem 0;
+    flex-grow: 1;
   }
 
   p {
@@ -88,5 +112,12 @@ export default {
     color: #fb6962;
     font-size: 1.2rem;
     margin-top: 50px;
+  }
+
+  @media (max-width: 481px) {
+    #content {
+      padding: 2rem 0;
+      margin: 0 1rem;
+    }
   }
 </style>
