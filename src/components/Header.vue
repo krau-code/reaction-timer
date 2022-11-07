@@ -16,7 +16,7 @@
     }
 
     #container {
-        margin: 0 4rem;
+        margin: 0 10rem;
     }
 
     #flex {
